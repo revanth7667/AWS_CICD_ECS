@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Hello Streamlit Test-11")
+st.title("Hello Streamlit Test-12")
 st.header("Calculate % Growth")
 initial = st.number_input("Initial investment in USD")
 yr = st.number_input("Growth Period in years")
