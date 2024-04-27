@@ -49,9 +49,7 @@ jobs:
         run: |
           docker buildx create --use
           docker buildx inspect --bootstrap
-          docker buildx build --platform linux/amd64 -t cicd_test .
-          docker buildx tag cicd_test:latest public.ecr.aws/f2z3t2m6/cicd_test:latest
-          docker push public.ecr.aws/f2z3t2m6/cicd_test:latest
+           docker buildx build --platform linux/amd64 -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_IMAGE:latest --push .
 
       - name: Deploy to ECS
         uses: imehedi/actions-awscli-v2@latest
